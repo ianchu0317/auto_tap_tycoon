@@ -64,6 +64,9 @@ if __name__ == '__main__':
 
     input("Press ENTER to continue...")
 
+
+
+'''
     spamMoney = Thread(target=spam_money, args=())
     spamMoney.start()
     print("Started money spam")
@@ -71,6 +74,7 @@ if __name__ == '__main__':
     spamUpgrades = Thread(target=spam_upgrades, args=())
     spamUpgrades.start()
     print("Started upgrade spam")
+'''
 
     kill_server()
-    exit(0)
+   # exit(0)

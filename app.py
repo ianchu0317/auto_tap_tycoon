@@ -25,12 +25,6 @@ def start_server():
     cmd("adb usb")
 
 
-def spam_money():
-    money_position = randint(1, 1080), 1080
-    print(money_position)
-    device.input_tap(money_position[0], money_position[1])
-
-
 def kill_server():
     cmd('adb kill-server')
 
@@ -44,8 +38,14 @@ if __name__ == '__main__':
 
     while SPAM:
         try:
-            spam_money()
-            sleep(0.0000001)
+            for x in range(1, 1080, 50):
+                money_position = x, 1080
+                print(money_position)
+                device.input_tap(money_position[0], money_position[1])
+            for x in range(1, 1080, 50):
+                money_position = 1080-x, 1080
+                print(money_position)
+                device.input_tap(money_position[0], money_position[1])
         except KeyboardInterrupt:
             SPAM = False
 
